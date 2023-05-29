@@ -1,0 +1,75 @@
+﻿@model TblBlog
+@{
+    ViewData["Title"] = "BlogForm";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Blog Ekleme Formu</h4>
+
+            <form class="forms-sample" asp-action="BlogForm" method="post" enctype="multipart/form-data">
+                
+                <input type="hidden" asp-for="Id"/>
+                <input type="hidden" asp-for="Yazar"/>
+                <input type="hidden" asp-for="OlusturmaTarihi"/>
+                <input type="hidden" asp-for="Gorsel"/>
+
+                
+                <div class="form-group">
+                     <label>Blog  Başlığı</label>
+                    <input type="text" class="form-control" placeholder="Blog Başlığı" asp-for="Ad">
+                </div>
+                <div class="form-group">
+                    <label>Blog Metni</label>
+                    <textarea type="text" class="form-control" placeholder="Blog Metni Giriniz" asp-for="Aciklama"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Resim</label>
+                    <input type="file" class="file-upload-default" name="uploadedFile" id="filePicker" onchange="GetFileSizeNameAndType()">
+                    <div class="input-group col-xs-12">
+                        <input type="text" class="form-control file-upload-info" disabled="" id="imageinput" placeholder="Upload Image">
+                        <span class="input-group-append">
+                            <button class="file-upload-browse btn btn-primary" onclick="DosyaSec()" type="button">Yükle</button>
+                        </span>
+                    </div>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary mr-2">Ekle</button>
+                <button class="btn btn-light">İptal</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function kontrol() {
+        alert("asdasd");
+    }
+    function DosyaSec() {
+        $('#filePicker').click();
+    }
+
+
+    function GetFileSizeNameAndType() {
+        var fi = document.getElementById('filePicker'); // GET THE FILE INPUT AS VARIABLE.
+
+        var totalFileSize = 0;
+
+        // VALIDATE OR CHECK IF ANY FILE IS SELECTED.
+        if (fi.files.length > 0) {
+            // RUN A LOOP TO CHECK EACH SELECTED FILE.
+            for (var i = 0; i <= fi.files.length - 1; i++) {
+                //ACCESS THE SIZE PROPERTY OF THE ITEM OBJECT IN FILES COLLECTION. IN THIS WAY ALSO GET OTHER PROPERTIES LIKE FILENAME AND FILETYPE
+                var fsize = fi.files.item(i).size;
+                totalFileSize = totalFileSize + fsize;
+
+                $('#imageinput').val(fi.files.item(i).name);
+
+            }
+        }
+
+    }
+</script>

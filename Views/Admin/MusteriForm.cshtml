@@ -1,0 +1,39 @@
+﻿@model TblMusteri
+@{
+    ViewData["Title"] = "MusteriEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Müşteri Ekleme Formu</h4>
+            
+            <form class="forms-sample" asp-action="MusteriForm">
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="KayitTarİhİ" />
+                <div class="form-group">
+                    <label >Ad</label>
+                    <input type="text" class="form-control" placeholder="Ad" asp-for="AdSoyad">
+                </div>
+                <div class="form-group">
+                <label >Soyad</label>
+                <input type="text" class="form-control"  placeholder="Soyad" asp-for="AdSoyad">
+                </div>
+               
+               <div class="form-group">
+                <label>Telefon</label>
+                <input type="text" class="form-control"  placeholder="Telefon" asp-for="Telefon">
+                </div>
+                <div class="form-group">
+                    <label>E-Posta</label>
+                    <input type="email" class="form-control" placeholder="E-Posta" asp-for="Eposta"> 
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Ekle</button>
+                <button class="btn btn-light">İptal</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApplication1</title>
+    <meta name="description" content="Premium Responsive Bootstrap 5 Personal Template" />
+    <meta name="keywords" content="bootstrap 5, premium, cv, personal, Portfolio, multipurpose" />
+    <meta name="author" content="SRBThemes" />
+
+    <link rel="shortcut icon" href="~/Assets/images/favicon.ico">
+
+    <!-- Bootstrap Css -->
+    <link rel="stylesheet" type="text/css" href="~/Assets/css/bootstrap.min.css">
+
+    <!-- Materialdesign icons Css -->
+    <link rel="stylesheet" type="text/css" href="~/Assets/css/materialdesignicons.min.css">
+
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" type="text/css" href="~/Assets/css/owl.carousel.min.css">
+
+    <!-- Animate Css -->
+    <link rel="stylesheet" type="text/css" href="~/Assets/css/animate.min.css">
+
+    <!-- Magnific-popup -->
+    <link rel="stylesheet" type="text/css" href="~/Assets/css/magnific-popup.css">
+
+    <!-- Mobirise icons Css -->
+    <link rel="stylesheet" type="text/css" href="~/Assets/css/mobiriseicons.css">
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" type="text/css" href="~/Assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="~/Assets/css/color/default.css" id="option-color">
+    </head>
+<body>
+    
+        <div>
+            <div id="status">
+                <div class="spinner">Loading...</div>
+            </div>
+        </div>
+
+        <!-- Start Navbar -->
+        <nav class="navbar navbar-expand-lg custom-nav navbar-light fixed-top sticky">
+            <div class="container">
+                <a class="navbar-brand pt-0 logo" href="#">
+                <img src="/Assets/images/CV.png" alt="" class="img-fluid logo-light">
+                <img src="/Assets/images/CV.png" alt="" class="img-fluid logo-dark">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="mdi mdi-menu"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto" id="main_nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Anasayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">Hakkımızda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Hizmetler</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#client">Müşreteriler</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#portfolio">Çalışmal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#blog">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">İletişim</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+    
+   
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+   
+
+    <footer class="footer bg-light">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-12">
+                    <div class="text-center text-white footer-alt">
+                        <ul class="list-unstyled list-inline mb-0">
+                            <li class="list-inline-item"><a href="#"><i class="mdi mdi-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="mdi mdi-linkedin"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="mdi mdi-pinterest"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="mdi mdi-twitter"></i></a></li>
+                        </ul>
+                        <p class="copyright_content mb-0 mt-3">@DateTime.Now.Year, Sehribans .</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--END FOOTER-->
+    <!-- Back To Top -->
+    <a href="#" class="back_top"> <i class="mdi mdi-chevron-up"> </i> </a>
+
+    <!-- START SWITCHER -->
+   
+        <div class="bottom">
+            <a href="#" class="settings rounded-right"><i class="mdi mdi-settings mdi-spin"></i></a>
+        </div>
+    </div>
+    <!-- END SWITCHER -->
+    <!--All Javascript -->
+    <script src="~/Assets/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Assets/js/jquery.min.js"></script>
+
+    <!-- Text Rotate -->
+    <script src="~/Assets/js/jquery.simple-text-rotator.js"></script>
+
+    <!-- Owl Carousel -->
+    <script src="~/Assets/js/owl.carousel.min.js"></script>
+
+    <!-- Switcher Js -->
+    <script src="~/Assets/js/switcher.js"></script>
+
+    <!-- Work Filter -->
+    <script src="~/Assets/js/isotope.js"></script>
+
+    <!-- Magnific Popup Js -->
+    <script src="~/Assets/js/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom Js -->
+    <script src="~/Assets/js/custom.js"></script>
+    <script>
+        $(".simple-text-rotate").textrotator({
+            animation: "fade",
+            speed: 3500
+        });
+    </script>
+</body>
+</html>

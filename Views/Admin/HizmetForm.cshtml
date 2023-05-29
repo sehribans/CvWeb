@@ -1,0 +1,68 @@
+﻿@model TblHizmet
+@{
+    ViewData["Title"] = "HizmetEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Hizmet Ekleme Formu</h4>
+            <form class="form-sample" method="post" asp-action="HizmetForm" enctype="multipart/form-data">
+        <div class="form-group">
+            <label>Hizmet Adı</label>
+            <input class="form-control" type="text" placeholder="Hizmet Adı" asp-for="HizmetAdi"/>
+
+        </div>
+        <div class="form-group">
+        <label>Hizmet Açıklaması</label>
+        <textarea class="form-control" type="text" placeholder="Hizmet Açıklaması" asp-for="Aciklama"></textarea>
+
+         </div>
+                <div class="form-group">
+                    <label>Resim</label>
+                    <input type="file" class="file-upload-default" name="uploadedFile" id="filePicker" onchange="GetFileSizeNameAndType()">
+                    <div class="input-group col-xs-12">
+                        <input type="text" class="form-control file-upload-info" disabled="" id="imageinput" placeholder="Upload Image">
+                        <span class="input-group-append">
+                            <button class="file-upload-browse btn btn-primary" onclick="DosyaSec()" type="button">Yükle</button>
+                        </span>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Ekle</button>
+                <button class="btn btn-light">İptal</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    function kontrol() {
+        alert("asdasd");
+    }
+    function DosyaSec() {
+        $('#filePicker').click();
+    }
+
+
+    function GetFileSizeNameAndType() {
+        var fi = document.getElementById('filePicker'); // GET THE FILE INPUT AS VARIABLE.
+
+        var totalFileSize = 0;
+
+        // VALIDATE OR CHECK IF ANY FILE IS SELECTED.
+        if (fi.files.length > 0) {
+            // RUN A LOOP TO CHECK EACH SELECTED FILE.
+            for (var i = 0; i <= fi.files.length - 1; i++) {
+                //ACCESS THE SIZE PROPERTY OF THE ITEM OBJECT IN FILES COLLECTION. IN THIS WAY ALSO GET OTHER PROPERTIES LIKE FILENAME AND FILETYPE
+                var fsize = fi.files.item(i).size;
+                totalFileSize = totalFileSize + fsize;
+
+                $('#imageinput').val(fi.files.item(i).name);
+
+            }
+        }
+
+    }
+</script>
